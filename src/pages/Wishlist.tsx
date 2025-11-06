@@ -18,8 +18,17 @@ export default function Wishlist() {
       const { data, error } = await supabase
         .from('wishlist')
         .select(`
-          *,
-          products (*)
+          id,
+          user_id,
+          created_at,
+          products (
+            id,
+            name,
+            image_url,
+            price_per_litre,
+            offer_price_per_litre,
+            stock_quantity
+          )
         `)
         .eq('user_id', user.id);
 
