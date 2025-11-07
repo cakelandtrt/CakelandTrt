@@ -87,8 +87,10 @@ export default function ProductCard({ product, onUpdate, compact = false }: Prod
   };
 
   if (compact) {
-    const volumeMatch = product.name.match(/(\d+\.?\d*[Ll])/);
-    const volumeText = volumeMatch ? volumeMatch[1].toUpperCase() : product.name.slice(-2).toUpperCase();
+    const volumeMatch = product.name.match(/(\d+\.?\d*)\s*(kg|g|l|ml)/i);
+    const volumeText = volumeMatch
+      ? `${volumeMatch[1]}${volumeMatch[2].toLowerCase().includes('l') ? 'KG' : volumeMatch[2].toUpperCase()}`
+      : product.name.slice(-2).toUpperCase();
 
     return (
       <div
