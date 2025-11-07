@@ -82,7 +82,7 @@ export default function Orders() {
                         {order.order_items?.map((item) => (
                           <div key={item.id} className="flex justify-between text-sm">
                             <span>
-                              {item.product_name} ({item.quantity_litres}L)
+                              {item.product_name} ({item.quantity_litres}kg)
                             </span>
                             <span>₹{item.total_price.toFixed(2)}</span>
                           </div>
