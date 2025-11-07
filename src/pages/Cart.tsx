@@ -107,7 +107,7 @@ export default function Cart() {
                           <h3 className="font-semibold text-lg mb-2">{product.name}</h3>
                           {!isCustom && (
                             <p className="text-muted-foreground mb-2">
-                              ₹{price.toFixed(2)} / litre
+                              ₹{price.toFixed(2)} / kg
                             </p>
                           )}
                           {isCustom && (
